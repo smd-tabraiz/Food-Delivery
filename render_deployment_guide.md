@@ -53,11 +53,11 @@ git push -u origin main
 | `CLOUDINARY_CLOUD_NAME` | *(your Cloudinary cloud name)* |
 | `CLOUDINARY_API_KEY` | *(your Cloudinary API key)* |
 | `CLOUDINARY_API_SECRET` | *(your Cloudinary API secret)* |
-| `EMAIL_USERNAME` | *(your email username)* |
-| `EMAIL_PASSWORD` | *(your email password)* |
-| `EMAIL_HOST` | *(e.g. smtp.gmail.com)* |
+| `EMAIL_FROM` | *(your verified SendGrid sender email)* |
+| `EMAIL_HOST` | `smtp.sendgrid.net` |
 | `EMAIL_PORT` | `587` |
-| `EMAIL_FROM` | `orderit.com` |
+| `EMAIL_USERNAME` | `apikey` |
+| `EMAIL_PASSWORD` | *(your SendGrid API Key)* |
 | `FRONTEND_URL` | *(Leave blank for now — fill in AFTER frontend is deployed)* |
 
 5. Click **Deploy**. Once it's live, **copy the URL** (e.g., `https://orderit-backend.onrender.com`).
@@ -115,6 +115,24 @@ Once both services are deployed:
 
 ---
 
+---
+
+## 🔑 How to get your API Keys
+
+### Stripe Keys
+1. Log in to [Stripe Dashboard](https://dashboard.stripe.com/).
+2. Go to **Developers** > **API keys**.
+3. Copy **Publishable key** (`STRIPE_API_KEY`).
+4. Click **Reveal secret key** and copy it (`STRIPE_SECRET_KEY`).
+
+### SendGrid Keys
+1. Log in to [SendGrid](https://app.sendgrid.com/).
+2. Go to **Settings** > **API Keys**.
+3. Create a new key and copy it (`EMAIL_PASSWORD`).
+4. Go to **Settings** > **Sender Authentication** to verify your sender email (`EMAIL_FROM`).
+
+---
+
 ## ⚠️ Common Issues & Fixes
 
 > [!WARNING]
@@ -125,6 +143,9 @@ Once both services are deployed:
 
 > [!TIP]
 > **MongoDB Atlas** — Make sure your Atlas cluster's Network Access allows `0.0.0.0/0` (All IPs) so Render's dynamic IPs can connect.
+
+> [!TIP]
+> **SendGrid Setup** — For SendGrid, always use `apikey` as the `EMAIL_USERNAME`. The `EMAIL_PASSWORD` will be your actual API Key. Ensure the `EMAIL_FROM` matches your **Verified Sender Identity** in the SendGrid dashboard.
 
 ---
 
