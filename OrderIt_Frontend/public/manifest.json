@@ -1,0 +1,21 @@
+{
+  "name": "OrderIt - Premium Food Delivery",
+  "short_name": "OrderIt",
+  "description": "Order food from the best restaurants near you.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#056a3a",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

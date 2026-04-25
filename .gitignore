@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+Backend (1)/node_modules/
+OrderIt_Frontend/node_modules/
+
+# Local databases and locks
+LocalDB/
+*.lock
+
+# Environment variables (SECURITY RISK if pushed)
+config.env
+.env
+*.env
+
+.env
+node_modules/
+LocalDB/
+
+# Build outputs
+dist/
+OrderIt_Frontend/dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
